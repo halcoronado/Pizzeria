@@ -1,0 +1,30 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+
+<p> Hal's Pizza Special: {{ pizza }}</p>
+<ul>
+    {% for t in toppings %}
+
+    <li>
+        <p> {{ t }} </p>
+    </li> 
+    {% empty %} 
+    <li>Sold Out for the Day</li>
+    {% endfor %}
+</ul>
+<p>Comments:</p>
+<ul>
+    {% for e in entries %}
+
+    <li>
+        <p> {{ e }} </p>
+    </li> 
+    {% empty %} 
+    <li>No Comments</li>
+    {% endfor %}
+</ul>
+
+<p><a href="{% url 'MainApp:new_entry' pizza.id %}">Add new comment</a></p>
+
+{% endblock content %}

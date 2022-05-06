@@ -1,15 +1,11 @@
 from django import forms
 
-from .models import Pizza, Topping
+from .models import Entry
 
-class PizzaForm(forms.ModelForm):
+
+class EntryForm(forms.ModelForm):
     class Meta:
-        model = Pizza
+        model = Entry
         fields = ['text']
         label = {'text': ''}
-
-class ToppingsForm(forms.ModelForm):
-    class Meta:
-        model = Topping
-        fields = ['text']
-        label = {'text': ''}
+        widgets = {'text': forms.Textarea(attrs={'cols':80})}

@@ -6,4 +6,7 @@ app_name = 'MainApp'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('pizzas', views.pizzas, name='pizzas'),
+    path('pizzas/<int:pizza_id>/',views.pizza,name='pizza'),
+    path('new_entry/<int:pizza_id>/',views.new_entry ,name='new_entry'),
 ]

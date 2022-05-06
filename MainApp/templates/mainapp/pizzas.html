@@ -1,0 +1,21 @@
+{% extends "MainApp/base.html" %}
+
+{% block content %}
+
+<p> Hal's Pizza Specials</p>
+<ul>
+    {% for p in pizzas %}
+
+    <li>
+        <a href= "{% url 'MainApp:pizza' p.id %}">{{ p.text }} </a> 
+    </li> 
+    {% empty %} 
+    <li>Sold Out for the Day</li>
+    {% endfor %}
+</ul>
+
+
+
+
+{% endblock content %}
+
